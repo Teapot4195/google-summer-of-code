@@ -27,6 +27,7 @@ We use the GSoC project size parameters for estimating the expected time complex
     - [Reproducible builds](#reproducible-builds)
     - [Refactoring of rustc_codegen_ssa to make it more convenient for the GCC codegen](#Refactoring-of-rustc_codegen_ssa-to-make-it-more-convenient-for-the-GCC-codegen)
     - [Reorganisation of `tests/ui/issues`](#reorganisation-of-testsuiissues)
+    - [Improve Rust User Experience on Windows](#improve-rust-user-experience-on-windows)
 - **Infrastructure**
     - [Port `std::arch` test suite to `rust-lang/rust`](#port-stdarch-test-suite-to-rust-langrust)
 - **Cargo**
@@ -229,7 +230,42 @@ Medium.
 
 **Related links**
 
-- [Prior project](gsoc/runs/2025.md/#mapping-the-maze-of-rusts-ui-test-suite-with-established-continuous-integration-practices)
+* [Prior project](gsoc/runs/2025.md/#mapping-the-maze-of-rusts-ui-test-suite-with-established-continuous-integration-practices)
+
+### Improve Rust User Experience on Windows
+
+**Description**
+
+The rust compiler, and related infrastructure user experience, currently includes a significant number of hiccups and roadblocks for windows users. This makes it difficult for new contributors using windows or one of the unix to NT API translation layers (e.g. cygwin, msys2 etc.), to get started with developing the compiler or using rust and other such related tasks.
+
+It is very easy to stumble into rather obscure, difficult to debug and fix bugs when compiling and working on/with rust on Windows. For example, path normalization being done incorrectly for the host OS is a longtime pain point when developing on a unix translation layer (e.g. msys2). Ideally, these "contributor-roadblocks" are prioritized when working on the project, however, it is up to the student to chose which of the issues they would like to work on.
+
+On the issue tracker, these issues can usually be found by filtering for one of the many windows target categories, for example, [O-windows](https://github.com/rust-lang/rust/issues?q=is%3Aissue%20state%3Aopen%20label%3AO-windows).
+
+**Expected result**
+
+An overall improvement to the number of issues and hiccups/roadblocks a compiler developer or rust user is expected to face when using rust on windows based platforms.
+
+**Desirable skills**
+
+Familiarity with Rust, comfort working with large codebases and, depending on project scope, some of the following:
+* Familiarity with windows NT API
+* Experience developing on windows or a translation layer
+* A decent amount of experience within your field of choice.
+
+**Project size**
+
+Small to large. (Size is scalable, depending on the scope of the project.)
+
+**Difficulty**
+
+Medium to Hard, depending on the issues to be fixed.
+
+**Mentor**
+
+* Teapot ([GitHub](https://github.com/Teapot4195), [Zulip](https://rust-lang.zulipchat.com/#narrow/dm/583581-Teapot))
+  * Teapot is happy to mentor projects fixing any of stdlib, compiler, bootstrap, or any combination of the three as the contributor details in their proposal.
+  * If you would like to do this project, please reach out so Teapot can tell you if he can mentor the field you would like to work on!
 
 ## Infrastructure
 
